@@ -1,3 +1,6 @@
 .sidebar_type_right {
     border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

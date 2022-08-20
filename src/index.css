@@ -1,7 +1,19 @@
 @import url(vendor/normalize.css);
+@import url(vendor/fonts.css);
 @import url(blocks/App/App.css);
+@import url(blocks/text/text.css);
+@import url(blocks/page/page.css);
+@import url(blocks/header/header.css);
 @import url(blocks/content/content.css);
 @import url(blocks/sidebar/sidebar.css);
 @import url(blocks/sidebar/_type/sidebar_type_left.css);
 @import url(blocks/sidebar/_type/sidebar_type_right.css);
 @import url(blocks/sidebar/__title/sidebar__title.css);
+@import url(blocks/sidebar/__menu-button/sidebar__menu-button.css);
+@import url(blocks/accordion/accordion.css);
+@import url(blocks/accordion/__trigger/accordion__trigger.css);
+@import url(blocks/accordion/__content/accordion__content.css);
+@import url(blocks/accordion/__info/accordion__info.css);
+@import url(blocks/accordion/__chevron/accordion__chevron.css);
+@import url(blocks/accordion/__chevron/_open/accordion__chevron_open.css);
+

@@ -3,6 +3,6 @@
     white-space: nowrap;
     position: fixed;
     bottom: 0;
-    transform: rotate(-90deg) translate(140px, -120px);
+    transform: rotate(-90deg) translate(130px, -120px);
     width: fit-content;
 }

@@ -3,4 +3,5 @@
     border-right: 1px solid black;
     display: block;
     width: 50px;
+    min-width: 50px;
 }

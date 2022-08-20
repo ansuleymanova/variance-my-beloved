@@ -1,8 +1,7 @@
-.content {
+.page {
+    width: 80%;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    margin: 0;
-    padding: 0;
 }

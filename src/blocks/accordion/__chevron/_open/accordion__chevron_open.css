@@ -1,0 +1,3 @@
+.accordion__chevron_open {
+    transform: rotate(-180deg);
+}
