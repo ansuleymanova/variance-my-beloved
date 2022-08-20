@@ -1,0 +1,8 @@
+.sidebar__title {
+    text-align: left;
+    white-space: nowrap;
+    position: fixed;
+    bottom: 0;
+    transform: rotate(-90deg) translate(140px, -120px);
+    width: fit-content;
+}

@@ -1,0 +1,6 @@
+.sidebar_type_left {
+    position: relative;
+    border-right: 1px solid black;
+    display: block;
+    width: 50px;
+}
