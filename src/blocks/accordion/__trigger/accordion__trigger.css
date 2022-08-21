@@ -12,6 +12,6 @@
     width: 100%;
 }
 
-.accordion__trigger:hover, .accordion__trigger:active {
+.accordion__trigger:hover {
     transform: scale(1.1);
 }

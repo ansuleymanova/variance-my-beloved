@@ -8,8 +8,8 @@ export default function Content (props: any) {
                 title="Стандартное отклонение для среднего"
                 subtitle="Вычисляется для количественных переменных"
                 isOpen={props.isMeanCICalcOpen}
-            >
-                <MeanCI />
+                onClick={props.onClickMeanCICalc}>
+                    <MeanCI />
             </Accordion>
         </div>
     )

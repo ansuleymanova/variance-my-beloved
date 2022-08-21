@@ -1,0 +1,7 @@
+.calculator__prompt {
+    margin: 0;
+    line-height: 1.2;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+}

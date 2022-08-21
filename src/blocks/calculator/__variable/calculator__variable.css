@@ -1,0 +1,13 @@
+.calculator__variable {
+    margin: 0;
+    padding: 8px 0;
+
+}
+
+.calculator__variable:first-child {
+    padding-top: 0;
+}
+
+.calculator__variable:last-child {
+    padding-bottom: 0;
+}

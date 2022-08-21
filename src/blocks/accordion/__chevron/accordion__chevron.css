@@ -6,5 +6,5 @@
     background-repeat: no-repeat;
     margin: 0 8px 16px 8px;
     align-self: flex-end;
-    transition: transform .2s ease-in;
+    transition: transform .3s ease-in;
 }

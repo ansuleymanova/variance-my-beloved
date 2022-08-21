@@ -7,12 +7,17 @@ import Content from './Content.js';
 
 function App() {
     const [isMeanCICalcOpen, setIsMeanCICalcOpen] = useState(false);
+
+    function togglMeanCIeCalc () {
+        setIsMeanCICalcOpen(!isMeanCICalcOpen);
+    }
+
     return (
         <div className="App">
             <LeftSidebar />
             <div className="page">
                 <Header />
-                <Content isMeanCICalcOpen={isMeanCICalcOpen}/>
+                <Content isMeanCICalcOpen={isMeanCICalcOpen} onClickMeanCICalc={togglMeanCIeCalc} />
             </div>
             <RightSidebar />
         </div>

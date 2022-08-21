@@ -1,0 +1,4 @@
+.accordion__content_visible {
+    height: fit-content;
+    display: flex;
+}
