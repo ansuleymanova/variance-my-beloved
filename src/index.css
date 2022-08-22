@@ -20,7 +20,10 @@
 @import url(blocks/accordion/__trigger/_active/accordion__trigger_active.css);
 @import url(blocks/calculator/calculator.css);
 @import url(blocks/calculator/__input/calculator__input.css);
+@import url(blocks/calculator/__output/calculator__output.css);
+@import url(blocks/calculator/__field/calculator__field.css);
 @import url(blocks/calculator/__prompt/calculator__prompt.css);
 @import url(blocks/calculator/__result/calculator__result.css);
 @import url(blocks/calculator/__variable/calculator__variable.css);
+@import url(blocks/calculator/__info/calculator__info.css);
 

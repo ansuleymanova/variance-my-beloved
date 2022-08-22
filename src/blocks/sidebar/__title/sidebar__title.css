@@ -5,4 +5,5 @@
     bottom: 0;
     transform: rotate(-90deg) translate(130px, -120px);
     width: fit-content;
+    font-size: 32px;
 }

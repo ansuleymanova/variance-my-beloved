@@ -1,19 +1,5 @@
 .calculator__input {
-    background-color: transparent;
-    outline: none;
-    text-align: center;
-    width: 100px;
-    margin: 8px 0;
-    -moz-appearance: textfield;
-    border: none;
-    border-bottom: 1px solid lightgrey;
-}
-
-.calculator__input::-webkit-outer-spin-button,
-.calculator__input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-.calculator__input:focus {
-    border-bottom: 1px solid black;
+    width: 50%;
+    padding: 0 8px 0 0;
+    border-right: 1px solid lightgrey;
 }

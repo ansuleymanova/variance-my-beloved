@@ -1,15 +1,25 @@
 import '../index.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header.js';
 import LeftSidebar from './LeftSidebar.js';
 import RightSidebar from './RightSidebar.js';
 import Content from './Content.js';
 
 function App() {
-    const [isMeanCICalcOpen, setIsMeanCICalcOpen] = useState(false);
+    const [isMeanCICalcOpen, setIsMeanCICalcOpen] = useState<boolean>(false);
+    const [isProportionCICalcOpen, setIsProportionCICalcOpen] = useState<boolean>(false);
+    const [isQVCCalcOpen, setIsQVCCalcOpen] = useState<boolean>(false);
 
-    function togglMeanCIeCalc () {
+    function toggleMeanCIeCalc () {
         setIsMeanCICalcOpen(!isMeanCICalcOpen);
+    }
+
+    function toggleProportionCIeCalc () {
+        setIsProportionCICalcOpen(!isProportionCICalcOpen);
+    }
+
+    function toggleQVCeCalc () {
+        setIsQVCCalcOpen(!isQVCCalcOpen);
     }
 
     return (
@@ -17,7 +27,14 @@ function App() {
             <LeftSidebar />
             <div className="page">
                 <Header />
-                <Content isMeanCICalcOpen={isMeanCICalcOpen} onClickMeanCICalc={togglMeanCIeCalc} />
+                <Content
+                    isMeanCICalcOpen={isMeanCICalcOpen}
+                    onClickMeanCICalc={toggleMeanCIeCalc}
+                    isProportionCICalcOpen={isProportionCICalcOpen}
+                    onClickProportionCICalc={toggleProportionCIeCalc}
+                    isQVCCalcOpen={isQVCCalcOpen}
+                    onClickQVCCalc={toggleQVCeCalc}
+                />
             </div>
             <RightSidebar />
         </div>

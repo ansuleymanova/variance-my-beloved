@@ -1,3 +1,5 @@
 .calculator__result {
     font-weight: bold;
+    margin: 0;
+    padding: 8px 0;
 }

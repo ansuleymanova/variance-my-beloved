@@ -1,4 +1,6 @@
 import {ChangeEvent, useEffect, useState} from 'react';
+import Calculator from './Calculator.js';
+import Variable from './Variable.js';
 
 export default function MeanCI() {
     const [confLevel, setConfLevel] = useState<number>(95);
@@ -6,7 +8,7 @@ export default function MeanCI() {
     const [upperBound, setUpperBound] = useState<number>(0);
     const [mean, setMean] = useState<number>(0);
     const [SD, setSD] = useState<number>(0);
-    const [sampleSize, setSampleSize] = useState(0);
+    const [sampleSize, setSampleSize] = useState<number>(0);
 
     function handleMeanChange(e: ChangeEvent<HTMLInputElement>) {
         setMean(parseFloat(e.target.value));
@@ -37,61 +39,44 @@ export default function MeanCI() {
     }, [mean, confLevel, sampleSize, SD])
 
     return (
-        <div className="calculator">
+        <Calculator
+            info="Результат и интерпретация в общем виде"
+            result={`На уровне доверительной вероятности ${confLevel}% истинное среднее значение признака
+                    лежит в интервале от ${lowerBound ? lowerBound.toFixed(2): 0} 
+                    до ${upperBound ? upperBound.toFixed(2): 0}`}>
             <div className="calculator__variable">
                 <p className="calculator__prompt">
-                    Выберите уровень доверительной вероятности:
+                    Выберите уровень доверительной вероятности
                 </p>
-                <select className="calculator__input" defaultValue="95" onChange={handleConfLevelChange}>
+                <select className="calculator__field" defaultValue="95" onChange={handleConfLevelChange}>
                     <option value="90">90%</option>
                     <option value="95">95%</option>
                     <option value="99">99%</option>
                 </select>
             </div>
-            <div className="calculator__variable">
-                <p className="calculator__prompt">
-                    Размер выборки:
-                </p>
-                <input
-                    className="calculator__input"
-                    name="sampleSize"
-                    type="number"
-                        onWheel={(e) => e.currentTarget.blur()}
-                        value={sampleSize ? sampleSize : ''}
-                        placeholder="215"
-                        onChange={handleSampleSizeChange}/>
-            </div>
-            <div className="calculator__variable">
-                <p className="calculator__prompt">
-                    Выборочное стандартное отклонение:
-                </p>
-                <input
-                    className="calculator__input"
-                    name="SD"
-                    type="number"
-                    step="0.01"
-                    onWheel={(e) => e.currentTarget.blur()}
-                    value={SD ? SD : ''}
-                    placeholder="2.4"
-                    onChange={handleSDChange}/>
-            </div>
-            <div className="calculator__variable">
-                <p className="calculator__prompt">
-                    Среднее по выборке:
-                </p>
-                <input
-                    className="calculator__input"
-                    name="mean"
-                    type="number"
-                    step="0.01"
-                    onWheel={(e) => e.currentTarget.blur()}
-                    value={mean ? mean : ''}
-                    placeholder="32.4"
-                    onChange={handleMeanChange}/>
-            </div>
-            <p className="calculator__result">
-                На уровне доверительной вероятности {confLevel}% истинное среднее значение признака
-                лежит в интервале от {lowerBound ? lowerBound.toFixed(2): 0} до {upperBound ? upperBound.toFixed(2): 0}
-            </p>
-        </div>)
+            <Variable
+                prompt="Размер выборки"
+                name="sampleSize"
+                step="1"
+                value={sampleSize}
+                placeholder="215"
+                onVariableChange={handleSampleSizeChange}
+            />
+            <Variable
+                prompt="Выборочное стандартное отклонение"
+                name="SD"
+                step="0.01"
+                value={SD}
+                placeholder="2.4"
+                onVariableChange={handleSDChange}
+            />
+            <Variable
+                prompt="Среднее по выборке"
+                name="mean"
+                step="0.01"
+                value={mean}
+                placeholder="32.7"
+                onVariableChange={handleMeanChange}
+            />
+        </Calculator>)
 }

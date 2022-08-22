@@ -1,7 +1,15 @@
-export default function Accordion (props: any) {
-    const chevronClassName = `accordion__chevron ${props.isOpen ? "accordion__chevron_open" : ""}`;
-    const triggerClassName = `accordion__trigger ${props.isOpen ? "accordion__trigger_active" : ""}`;
-    const contentClassName = `accordion__content ${props.isOpen ? "accordion__content_visible" : ""}`;
+interface AccordionProps {
+    isOpen: boolean;
+    onClick: () => void;
+    title: string;
+    subtitle: string;
+    children: JSX.Element;
+}
+
+export default function Accordion (props: AccordionProps) {
+    const chevronClassName: string = `accordion__chevron ${props.isOpen ? "accordion__chevron_open" : ""}`;
+    const triggerClassName: string = `accordion__trigger ${props.isOpen ? "accordion__trigger_active" : ""}`;
+    const contentClassName: string = `accordion__content ${props.isOpen ? "accordion__content_visible" : ""}`;
 
     return (
         <div className="accordion">
