@@ -3,3 +3,12 @@
     padding: 0 8px 0 0;
     border-right: 1px solid lightgrey;
 }
+
+@media screen and (max-width: 530px) {
+    .calculator__input {
+        padding: 0 0 8px;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid lightgrey;
+    }
+}

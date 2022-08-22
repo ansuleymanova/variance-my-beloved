@@ -1,4 +1,13 @@
 .sidebar {
     padding: 0;
     margin: 0;
+    width: 50px;
+    min-width: 50px;
+}
+
+@media screen and (max-width: 720px) {
+    .sidebar {
+        width: 40px;
+        min-width: 40px;
+    }
 }

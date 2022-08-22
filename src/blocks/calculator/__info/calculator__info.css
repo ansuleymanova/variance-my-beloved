@@ -4,3 +4,9 @@
     padding: 0 0 8px;
     border-bottom: 1px solid lightgray;
 }
+
+@media screen and (max-width: 530px) {
+    .calculator__info {
+        border-bottom: none;
+    }
+}

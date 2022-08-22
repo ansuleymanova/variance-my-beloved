@@ -5,3 +5,14 @@
     text-align: left;
     font-weight: normal;
 }
+
+@media screen and (min-width: 531px) and (max-width: 720px) {
+    .accordion__info {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .accordion__info {
+        font-size: 12px;
+    }
+}

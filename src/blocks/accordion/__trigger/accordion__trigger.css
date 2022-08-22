@@ -15,3 +15,16 @@
 .accordion__trigger:hover {
     transform: scale(1.1);
 }
+
+
+@media screen and (min-width: 531px) and (max-width: 720px) {
+    .accordion__trigger {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .accordion__trigger {
+        font-size: 16px;
+    }
+}

@@ -5,3 +5,17 @@
     display: flex;
     flex-direction: row;
 }
+
+
+@media screen and (min-width: 531px) and (max-width: 720px)  {
+    .calculator {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .calculator {
+        font-size: 12px;
+        flex-direction: column;
+    }
+}

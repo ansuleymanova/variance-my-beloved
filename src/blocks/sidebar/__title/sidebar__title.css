@@ -7,3 +7,17 @@
     width: fit-content;
     font-size: 32px;
 }
+
+@media screen and (min-width: 531px) and (max-width: 720px)  {
+    .sidebar__title {
+        font-size: 24px;
+        transform: rotate(-90deg) translate(100px, -85px);
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .sidebar__title {
+        font-size: 20px;
+        transform: rotate(-90deg) translate(78px, -62px);
+    }
+}

@@ -8,3 +8,11 @@
     align-self: flex-end;
     transition: transform .3s ease-in;
 }
+
+@media screen and (max-width: 530px) {
+    .accordion__chevron  {
+        height: 15px;
+        width: 15px;
+        margin: 0 4px 8px 4px;
+    }
+}

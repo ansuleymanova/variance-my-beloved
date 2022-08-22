@@ -2,7 +2,5 @@
     position: relative;
     border-right: 1px solid black;
     display: block;
-    width: 50px;
-    min-width: 50px;
     padding: 0 8px 8px 0;
 }
