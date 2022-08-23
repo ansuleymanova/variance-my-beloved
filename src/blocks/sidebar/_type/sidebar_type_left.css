@@ -4,3 +4,11 @@
     display: block;
     padding: 0 8px 8px 0;
 }
+
+@media screen and (max-width: 720px) {
+    .sidebar_type_left {
+        width: 20px;
+        max-width: 20px;
+        padding: 0 4px 8px 0;
+    }
+}

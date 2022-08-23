@@ -6,3 +6,10 @@
     justify-content: flex-start;
     padding: 8px 0 0 8px;
 }
+
+@media screen and (max-width: 720px) {
+    .sidebar_type_right {
+        width: 20px;
+        max-width: 20px;
+    }
+}

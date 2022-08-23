@@ -30,6 +30,7 @@
 @import url(blocks/sidebar/_open/sidebar_open.css);
 @import url(blocks/sidebar/__menu/sidebar__menu.css);
 @import url(blocks/link/link.css);
+@import url(blocks/link/__text/link__text.css);
 @import url(blocks/icon/icon.css);
 @import url(blocks/icon/_type/icon_type_github.css);
 @import url(blocks/icon/_type/icon_type_gs.css);
