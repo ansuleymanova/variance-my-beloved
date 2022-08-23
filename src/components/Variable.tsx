@@ -16,7 +16,7 @@ export default function Variable (props: VariableProps) {
                 {props.prompt}
             </p>
             <input
-                className="calculator__field"
+                className="calculator__field calculator__field_type_number"
                 type="number"
                 name={props.name}
                 step={props.step}

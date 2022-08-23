@@ -1,3 +1,4 @@
 .accordion__trigger_active {
     transform: scale(1.1);
+    color: #000;
 }

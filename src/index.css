@@ -22,6 +22,7 @@
 @import url(blocks/calculator/__input/calculator__input.css);
 @import url(blocks/calculator/__output/calculator__output.css);
 @import url(blocks/calculator/__field/calculator__field.css);
+@import url(blocks/calculator/__field/_type/calculator__field_type_number.css);
 @import url(blocks/calculator/__prompt/calculator__prompt.css);
 @import url(blocks/calculator/__result/calculator__result.css);
 @import url(blocks/calculator/__variable/calculator__variable.css);

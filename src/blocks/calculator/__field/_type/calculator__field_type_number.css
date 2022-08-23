@@ -1,0 +1,10 @@
+.calculator__field_type_number {
+    outline: none;
+    text-align: left;
+    -moz-appearance: textfield;
+    border-bottom: 1px solid lightgrey;
+}
+.calculator__field_type_number::-webkit-outer-spin-button,
+.calculator__field_type_number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

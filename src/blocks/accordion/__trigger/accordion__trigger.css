@@ -10,6 +10,7 @@
     transform-origin: top left;
     width: 90%;
     border: none;
+    color: #000;
 }
 
 .accordion__trigger:hover {
