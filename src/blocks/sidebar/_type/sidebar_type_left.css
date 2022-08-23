@@ -3,12 +3,12 @@
     border-right: 1px solid black;
     display: block;
     padding: 0 8px 8px 0;
+    width: 50px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 530px) {
     .sidebar_type_left {
-        width: 20px;
-        max-width: 20px;
         padding: 0 4px 8px 0;
+        width: 40px;
     }
 }

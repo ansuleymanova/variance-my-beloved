@@ -2,6 +2,7 @@
     margin: 8px 0;
     padding: 0;
     visibility: visible;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 800px) {

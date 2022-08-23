@@ -7,6 +7,7 @@
     align-items: center;
     transform-origin: top left;
     transition: transform .3s ease;
+    width: fit-content;
 }
 
 .link:hover {

@@ -2,5 +2,7 @@
     margin: 8px 0;
     font-size: 14px;
     padding: 0;
-    width: 100%;
+    width: fit-content;
+    position: fixed;
+    top: 24px;
 }

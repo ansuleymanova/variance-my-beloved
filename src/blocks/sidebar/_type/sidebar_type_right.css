@@ -1,15 +1,9 @@
 .sidebar_type_right {
     border-left: 1px solid black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 8px 0 0 8px;
-}
-
-@media screen and (max-width: 720px) {
-    .sidebar_type_right {
-        width: 20px;
-        max-width: 20px;
-    }
+    margin: 0;
 }

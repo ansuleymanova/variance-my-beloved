@@ -9,6 +9,7 @@
     background-color: transparent;
     cursor: pointer;
     transition: transform .3s ease-in-out;
+    position: fixed;
 }
 
 .sidebar__menu-button:hover {

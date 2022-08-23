@@ -13,4 +13,5 @@
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     color: #000;
+    width: 100%;
 }
