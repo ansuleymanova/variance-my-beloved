@@ -8,14 +8,13 @@
     cursor: pointer;
     transition: transform .2s ease-in;
     transform-origin: top left;
-    width: fit-content;
     border: none;
     color: #000;
-    max-width: 90%;
+    width: 90%;
 }
 
 .accordion__trigger:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 

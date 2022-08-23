@@ -43,7 +43,7 @@ export default function MeanCI() {
             info="Результат и интерпретация в общем виде"
             result={`На уровне доверительной вероятности ${confLevel}% истинное среднее значение признака
                     лежит в интервале от ${lowerBound ? lowerBound.toFixed(2): 0} 
-                    до ${upperBound ? upperBound.toFixed(2): 0}`}>
+                    до ${upperBound ? upperBound.toFixed(2): 0}.`}>
             <div className="calculator__variable">
                 <p className="calculator__prompt">
                     Выберите уровень доверительной вероятности
@@ -58,6 +58,7 @@ export default function MeanCI() {
                 prompt="Размер выборки"
                 name="sampleSize"
                 step="1"
+                min="1"
                 value={sampleSize}
                 placeholder="215"
                 onVariableChange={handleSampleSizeChange}

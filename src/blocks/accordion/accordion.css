@@ -6,3 +6,7 @@
     margin: 0;
     padding: 16px 8px 0;
 }
+
+.accordion:last-child {
+    margin-bottom: 16px;
+}

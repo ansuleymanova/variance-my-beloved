@@ -7,6 +7,7 @@ interface VariableProps {
     value: number;
     placeholder: string;
     onVariableChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    min?: string;
 }
 
 export default function Variable (props: VariableProps) {
@@ -23,7 +24,9 @@ export default function Variable (props: VariableProps) {
                 onWheel={(e) => e.currentTarget.blur()}
                 value={props.value ? props.value : ''}
                 placeholder={props.placeholder}
-                onChange={props.onVariableChange}/>
+                onChange={props.onVariableChange}
+                min={props.min ? props.min : 0}
+            />
         </div>
     )
 }
