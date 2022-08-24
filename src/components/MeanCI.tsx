@@ -9,6 +9,7 @@ export default function MeanCI() {
     const [mean, setMean] = useState<number>(0);
     const [SD, setSD] = useState<number>(0);
     const [sampleSize, setSampleSize] = useState<number>(0);
+    const [isValid, setIsValid] = useState<boolean>(false);
 
     function handleMeanChange(e: ChangeEvent<HTMLInputElement>) {
         setMean(parseFloat(e.target.value));
@@ -36,10 +37,12 @@ export default function MeanCI() {
         let error = (SD / Math.sqrt(sampleSize)) * z;
         setLowerBound(mean - error);
         setUpperBound(mean + error);
+        setIsValid(mean > 0 && SD > 0 && sampleSize > 0);
     }, [mean, confLevel, sampleSize, SD])
 
     return (
         <Calculator
+            isValid={isValid}
             result={`На уровне доверительной вероятности ${confLevel}% истинное среднее значение признака
                     лежит в интервале от ${lowerBound ? lowerBound.toFixed(2): 0} 
                     до ${upperBound ? upperBound.toFixed(2): 0}.`}>

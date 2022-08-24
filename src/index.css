@@ -40,3 +40,4 @@
 @import url(blocks/calculator/__button/_type/calculator__button_type_add.css);
 @import url(blocks/calculator/__button/_type/calculator__button_type_remove.css);
 @import url(blocks/calculator/__button/_invisible/calculator__button_invisible.css);
+@import url(blocks/calculator/__result/_invisible/calculator__result_invisible.css);

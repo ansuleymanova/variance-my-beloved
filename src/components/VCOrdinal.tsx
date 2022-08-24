@@ -7,6 +7,7 @@ export default function VCOrdinal () {
     const [quartileRange, setQuartileRange] = useState<number>(0);
     const [varianceCoefficient, setVarianceCoefficient] = useState<number>(0);
     const [interpretation, setInterpretation] = useState<string>('');
+    const [isValid, setIsValid] = useState<boolean>(false);
 
     function handleRangeChange(e: ChangeEvent<HTMLInputElement>) {
         setRange(parseFloat(e.target.value));
@@ -24,10 +25,12 @@ export default function VCOrdinal () {
             : coefficient < 35
                 ? 'низкий. Выборка в основном выбирала один и тот же вариант ответа.'
                 : 'умеренный.')
+        setIsValid(range > 0);
     }, [range, quartileRange, interpretation])
 
     return (
         <Calculator
+            isValid={isValid}
             result={`Коэффициент вариации составляет ${varianceCoefficient ? varianceCoefficient.toFixed(2) : 0}%,
             разброс выборки по этому признаку ${varianceCoefficient ? interpretation: ''}`}>
             <Variable

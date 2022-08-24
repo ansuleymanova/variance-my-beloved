@@ -1,9 +1,12 @@
 interface CalculatorProps {
     children: JSX.Element | JSX.Element[];
     result: string | JSX.Element | JSX.Element[];
+    isValid: boolean;
 }
 
 export default function Calculator (props: CalculatorProps) {
+    const resultClassName = `calculator__result ${props.isValid ? '' : 'calculator__result_invisible'}`;
+
     return (
         <div className="calculator">
             <div className="calculator__input">
@@ -13,7 +16,7 @@ export default function Calculator (props: CalculatorProps) {
                 <p className="calculator__info">
                     Результат и интерпретация в общем виде
                 </p>
-                <p className="calculator__result">
+                <p className={resultClassName}>
                     {props.result}
                 </p>
             </div>

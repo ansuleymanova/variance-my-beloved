@@ -7,6 +7,7 @@ export default function VCInterval () {
     const [SD, setSD] = useState<number>(0);
     const [varianceCoefficient, setVarianceCoefficient] = useState<number>(0);
     const [interpretation, setInterpretation] = useState<string>('');
+    const [isValid, setIsValid] = useState<boolean>(false);
 
     function handleMeanChange(e: ChangeEvent<HTMLInputElement>) {
         setMean(parseFloat(e.target.value));
@@ -23,11 +24,13 @@ export default function VCInterval () {
             ? 'высокий. Ответы респондентов более или менее равномерно распределены по возможным вариантам ответа.'
             : coefficient < 35
                 ? 'низкий. Ответы респондентов в основном находятся около среднего.'
-                : 'умеренный.')
+                : 'умеренный.');
+        setIsValid(SD > 0 && mean > 0);
     }, [mean, SD, interpretation])
 
     return (
         <Calculator
+            isValid={isValid}
             result={`Коэффициент вариации составляет ${varianceCoefficient ? varianceCoefficient.toFixed(2) : 0}%,
             разброс выборки по этому признаку ${varianceCoefficient ? interpretation: ''}`}>
             <Variable

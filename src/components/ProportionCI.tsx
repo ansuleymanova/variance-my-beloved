@@ -8,6 +8,7 @@ export default function ProportionCI () {
     const [confLevel, setConfLevel] = useState('95');
     const [sampleSize, setSampleSize] = useState<number>(0);
     const [resultList, setResultList] = useState(['']);
+    const [isValid, setIsValid] = useState<boolean>(false);
     const removeButtonClassName = `calculator__button calculator__button_type_remove ${inputList.length === 1 ? 'calculator__button_invisible' : ''}`
 
     function handleConfLevelChange(e: ChangeEvent<HTMLSelectElement>) {
@@ -56,10 +57,12 @@ export default function ProportionCI () {
             list.push(` ${((proportion - error)*100).toFixed(1)}% - ${((proportion + error)*100).toFixed(1)}%`);
         })
         setResultList(list);
+        setIsValid(sampleSize > 0 && inputList[0] !== 0 && !inputList.includes(NaN));
     }, [inputList, confLevel, sampleSize])
 
     return (
         <Calculator
+            isValid={isValid}
             result={
             <>
                 <p>На уровне доверительной вероятности {confLevel}% истинные доли
