@@ -40,7 +40,6 @@ export default function MeanCI() {
 
     return (
         <Calculator
-            info="Результат и интерпретация в общем виде"
             result={`На уровне доверительной вероятности ${confLevel}% истинное среднее значение признака
                     лежит в интервале от ${lowerBound ? lowerBound.toFixed(2): 0} 
                     до ${upperBound ? upperBound.toFixed(2): 0}.`}>

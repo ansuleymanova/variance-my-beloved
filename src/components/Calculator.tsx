@@ -1,6 +1,5 @@
 interface CalculatorProps {
     children: JSX.Element | JSX.Element[];
-    info: string;
     result: string | JSX.Element | JSX.Element[];
 }
 
@@ -12,7 +11,7 @@ export default function Calculator (props: CalculatorProps) {
             </div>
             <div className="calculator__output">
                 <p className="calculator__info">
-                    {props.info}
+                    Результат и интерпретация в общем виде
                 </p>
                 <p className="calculator__result">
                     {props.result}

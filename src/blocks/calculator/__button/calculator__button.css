@@ -1,0 +1,17 @@
+.calculator__button {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 2px;
+    display: flex;
+    background-position: center;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 24px;
+    opacity: .5;
+    transition: opacity .3s ease-in;
+}
+
+.calculator__button:hover {
+    opacity: 1;
+}

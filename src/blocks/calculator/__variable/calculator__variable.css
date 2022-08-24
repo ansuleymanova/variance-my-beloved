@@ -1,7 +1,8 @@
 .calculator__variable {
     margin: 0;
     padding: 8px 0;
-
+    display: flex;
+    flex-direction: row;
 }
 
 .calculator__variable:first-child {
@@ -10,4 +11,16 @@
 
 .calculator__variable:last-child {
     padding-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .calculator__variable {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .calculator__variable {
+        align-items: center;
+    }
 }

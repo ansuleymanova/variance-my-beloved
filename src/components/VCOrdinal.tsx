@@ -28,7 +28,6 @@ export default function VCOrdinal () {
 
     return (
         <Calculator
-            info="Результат и интерпретация в общем виде"
             result={`Коэффициент вариации составляет ${varianceCoefficient ? varianceCoefficient.toFixed(2) : 0}%,
             разброс выборки по этому признаку ${varianceCoefficient ? interpretation: ''}`}>
             <Variable
