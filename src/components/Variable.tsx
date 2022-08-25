@@ -26,6 +26,7 @@ export default function Variable (props: VariableProps) {
                 placeholder={props.placeholder}
                 onChange={props.onVariableChange}
                 min={props.min ? props.min : 0}
+                required
             />
         </div>
     )

@@ -65,8 +65,8 @@ export default function ProportionCI () {
             isValid={isValid}
             result={
             <>
-                <p>На уровне доверительной вероятности {confLevel}% истинные доли
-                    признака лежат в интервалах:</p>
+                На уровне доверительной вероятности {confLevel}%
+                истинные доли признака лежат в интервалах:
                 {resultList.map((result: string, index: number) => {
                     return (<p key={index}>{result}</p>)
                 })}

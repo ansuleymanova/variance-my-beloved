@@ -16,9 +16,9 @@ export default function Calculator (props: CalculatorProps) {
                 <p className="calculator__info">
                     Результат и интерпретация в общем виде
                 </p>
-                <p className={resultClassName}>
+                <div className={resultClassName}>
                     {props.result}
-                </p>
+                </div>
             </div>
         </div>
     )
