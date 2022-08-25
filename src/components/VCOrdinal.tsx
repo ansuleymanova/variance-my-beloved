@@ -1,6 +1,7 @@
-import Calculator from "./Calculator";
-import Variable from "./Variable";
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent, useEffect } from 'react';
+import {varianceInterpretationOrdinal} from '../utils/constants.js';
+import Calculator from './Calculator.js';
+import Variable from './Variable.js';
 
 export default function VCOrdinal () {
     const [range, setRange] = useState<number>(0);
@@ -20,19 +21,16 @@ export default function VCOrdinal () {
     useEffect(() => {
         const coefficient = quartileRange / range * 100;
         setVarianceCoefficient(coefficient);
-        setInterpretation(coefficient > 65
-            ? 'высокий. Ответы респондентов скорее равномерно распределены по возможным вариантам ответа: респонденты не нашли согласия.'
-            : coefficient < 35
-                ? 'низкий. Выборка в основном выбирала один и тот же вариант ответа.'
-                : 'умеренный.')
-        setIsValid(range > 0);
+        const selectedInterpretation = coefficient > 65 ? "high" : coefficient < 35 ? "low" : "medium";
+        setInterpretation(varianceInterpretationOrdinal[selectedInterpretation]);
+        setIsValid(range > 0 && quartileRange > 0);
     }, [range, quartileRange, interpretation])
 
     return (
         <Calculator
             isValid={isValid}
             result={`Коэффициент вариации составляет ${varianceCoefficient ? varianceCoefficient.toFixed(2) : 0}%,
-            разброс выборки по этому признаку ${varianceCoefficient ? interpretation: ''}`}>
+            разброс выборки по этому признаку ${varianceCoefficient ? interpretation: ''}.`}>
             <Variable
                 prompt="Общий размах"
                 name="range"

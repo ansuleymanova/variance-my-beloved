@@ -1,12 +1,12 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { zScore } from '../utils/constants';
+import { zScore } from '../utils/constants.js';
 import Calculator from './Calculator.js';
 import Variable from './Variable.js';
 import DynamicVariable from './DynamicVariable.js';
 
 export default function ProportionCI () {
     const [inputList, setInputList] = useState([0]);
-    const [confLevel, setConfLevel] = useState('95');
+    const [confLevel, setConfLevel] = useState('95%');
     const [sampleSize, setSampleSize] = useState<number>(0);
     const [resultList, setResultList] = useState(['']);
     const [isValid, setIsValid] = useState<boolean>(false);
@@ -48,10 +48,10 @@ export default function ProportionCI () {
                 <p className="calculator__prompt">
                     Выберите уровень доверительной вероятности
                 </p>
-                <select className="calculator__field" defaultValue="95" onChange={handleConfLevelChange}>
-                    <option value="90">90%</option>
-                    <option value="95">95%</option>
-                    <option value="99">99%</option>
+                <select className="calculator__field" defaultValue="95%" onChange={handleConfLevelChange}>
+                    <option value="90%">90%</option>
+                    <option value="95%">95%</option>
+                    <option value="99%">99%</option>
                 </select>
             </div>
             <Variable

@@ -1,9 +1,10 @@
 import {ChangeEvent, useEffect, useState} from 'react';
+import {zScore} from '../utils/constants.js';
 import Calculator from './Calculator.js';
 import Variable from './Variable.js';
 
 export default function MeanCI() {
-    const [confLevel, setConfLevel] = useState<number>(95);
+    const [confLevel, setConfLevel] = useState<string>("95%");
     const [lowerBound, setLowerBound] = useState<number>(0);
     const [upperBound, setUpperBound] = useState<number>(0);
     const [mean, setMean] = useState<number>(0);
@@ -16,7 +17,7 @@ export default function MeanCI() {
     }
 
     function handleConfLevelChange(e: ChangeEvent<HTMLSelectElement>) {
-        setConfLevel(parseFloat(e.target.value));
+        setConfLevel(e.target.value);
     }
 
     function handleSampleSizeChange(e: ChangeEvent<HTMLInputElement>) {
@@ -28,12 +29,7 @@ export default function MeanCI() {
     }
 
     useEffect(() => {
-        let z;
-        confLevel === 90
-            ? z = 1.65
-            : confLevel === 95
-                ? z = 1.96
-                : z = 2.33;
+        const z = zScore[confLevel];
         let error = (SD / Math.sqrt(sampleSize)) * z;
         setLowerBound(mean - error);
         setUpperBound(mean + error);
@@ -43,17 +39,17 @@ export default function MeanCI() {
     return (
         <Calculator
             isValid={isValid}
-            result={`На уровне доверительной вероятности ${confLevel}% истинное среднее значение признака
+            result={`На уровне доверительной вероятности ${confLevel} истинное среднее значение признака
                     лежит в интервале от ${lowerBound ? lowerBound.toFixed(2): 0} 
                     до ${upperBound ? upperBound.toFixed(2): 0}.`}>
             <div className="calculator__variable">
                 <p className="calculator__prompt">
                     Выберите уровень доверительной вероятности
                 </p>
-                <select className="calculator__field" defaultValue="95" onChange={handleConfLevelChange}>
-                    <option value="90">90%</option>
-                    <option value="95">95%</option>
-                    <option value="99">99%</option>
+                <select className="calculator__field" defaultValue="95%" onChange={handleConfLevelChange}>
+                    <option value="90%">90%</option>
+                    <option value="95%">95%</option>
+                    <option value="99%">99%</option>
                 </select>
             </div>
             <Variable

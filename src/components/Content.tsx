@@ -1,7 +1,7 @@
 import Accordion from './Accordion.js';
+import QVC from './QVC.js';
 import MeanCI from './MeanCI.js';
 import ProportionCI from './ProportionCI.js';
-import QVC from './QVC.js';
 import VCInterval from './VCInterval.js';
 import VCOrdinal from './VCOrdinal.js';
 

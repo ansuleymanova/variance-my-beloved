@@ -1,4 +1,4 @@
-import {useState } from "react";
+import {useState } from 'react';
 
 interface AccordionProps {
     title: string;
@@ -12,7 +12,7 @@ export default function Accordion (props: AccordionProps) {
     const triggerClassName: string = `accordion__trigger ${isOpen ? "accordion__trigger_active" : ""}`;
     const contentClassName: string = `accordion__content ${isOpen ? "accordion__content_visible" : ""}`;
 
-    function toggleCalc () {
+    function toggleCalc() {
         setIsOpen(!isOpen);
     }
 
