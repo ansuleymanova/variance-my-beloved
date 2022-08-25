@@ -1,45 +1,16 @@
-import {ChangeEvent, useEffect, useState} from "react";
-import Variable from "./Variable";
-import Calculator from "./Calculator";
+import {ChangeEvent, useEffect, useState} from 'react';
+import Calculator from './Calculator.js';
+import Variable from './Variable.js';
+import DynamicVariable from './DynamicVariable.js';
 
-export default function QVC (props: any) {
+export default function QVC () {
     const [QVC, setQVC] = useState<number>(0);
     const [inputList, setInputList] = useState([0]);
     const [sampleSize, setSampleSize] = useState<number>(0);
     const [isValid, setIsValid] = useState<boolean>(false);
-    const removeButtonClassName = `calculator__button calculator__button_type_remove ${inputList.length === 1 ? 'calculator__button_invisible' : ''}`
 
     function handleSampleSizeChange(e: ChangeEvent<HTMLInputElement>) {
         setSampleSize(parseFloat(e.target.value));
-    }
-
-    function handleInputChange(e: any, index: number) {
-        const list = [...inputList];
-        list[index] = parseInt(e.target.value);
-        setInputList(list);
-    }
-
-    function handleAddClick() {
-        setInputList([...inputList, 0])
-    }
-
-    function handleRemoveClick() {
-        let list = [...inputList];
-        list.splice(-1);
-        setInputList(list);
-    }
-
-    function makeVariable(number: number, index: number) {
-        return (
-            <Variable
-                key={index}
-                prompt={`Частота категории #${index + 1}`}
-                name="proportion"
-                step="0.01"
-                value={number}
-                placeholder="12"
-                onVariableChange={e => handleInputChange(e, index)} />
-        )
     }
 
     useEffect(() => {
@@ -76,19 +47,13 @@ export default function QVC (props: any) {
                 placeholder="215"
                 onVariableChange={handleSampleSizeChange}
             />
-            <>
-                {inputList.map((number: number, index: number) => makeVariable(number, index))}
-            </>
-            <div className="calculator__buttons">
-                <button
-                    className="calculator__button calculator__button_type_add"
-                    onClick={handleAddClick}
-                />
-                <button
-                    className={removeButtonClassName}
-                    onClick={handleRemoveClick}
-                />
-            </div>
+            <DynamicVariable
+                inputList={inputList}
+                setInputList={setInputList}
+                prompt="Частота категории"
+                name="category"
+                elementType="int"
+            />
         </Calculator>
     )
 }

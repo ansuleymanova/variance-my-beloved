@@ -4,7 +4,7 @@
     border-radius: 2px;
     display: flex;
     background-position: center;
-    width: 20%;
+    width: 100px;
     background-repeat: no-repeat;
     background-size: 20px;
     height: 24px;
@@ -14,4 +14,10 @@
 
 .calculator__button:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 530px) {
+    .calculator__button {
+        width: 25%;
+    }
 }

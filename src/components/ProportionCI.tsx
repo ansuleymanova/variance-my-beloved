@@ -1,7 +1,8 @@
-import Calculator from './Calculator.js';
-import { ChangeEvent, useEffect, useState } from "react";
-import Variable from "./Variable";
+import { ChangeEvent, useEffect, useState } from 'react';
 import { zScore } from '../utils/constants';
+import Calculator from './Calculator.js';
+import Variable from './Variable.js';
+import DynamicVariable from './DynamicVariable.js';
 
 export default function ProportionCI () {
     const [inputList, setInputList] = useState([0]);
@@ -9,7 +10,6 @@ export default function ProportionCI () {
     const [sampleSize, setSampleSize] = useState<number>(0);
     const [resultList, setResultList] = useState(['']);
     const [isValid, setIsValid] = useState<boolean>(false);
-    const removeButtonClassName = `calculator__button calculator__button_type_remove ${inputList.length === 1 ? 'calculator__button_invisible' : ''}`
 
     function handleConfLevelChange(e: ChangeEvent<HTMLSelectElement>) {
         setConfLevel(e.target.value);
@@ -17,35 +17,6 @@ export default function ProportionCI () {
 
     function handleSampleSizeChange(e: ChangeEvent<HTMLInputElement>) {
         setSampleSize(parseFloat(e.target.value));
-    }
-
-    function handleInputChange(e: any, index: number) {
-        const list = [...inputList];
-        list[index] = parseFloat(e.target.value);
-        setInputList(list);
-    }
-
-    function handleAddClick() {
-        setInputList([...inputList, 0])
-    }
-
-    function handleRemoveClick() {
-        let list = [...inputList];
-        list.splice(-1);
-        setInputList(list);
-    }
-
-    function makeVariable(number: number, index: number) {
-        return (
-            <Variable
-                key={index}
-                prompt={`Доля категории #${index + 1}`}
-                name="proportion"
-                step="0.01"
-                value={number}
-                placeholder=".34"
-                onVariableChange={e => handleInputChange(e, index)} />
-        )
     }
 
     useEffect(() => {
@@ -92,19 +63,13 @@ export default function ProportionCI () {
                 placeholder="215"
                 onVariableChange={handleSampleSizeChange}
             />
-            <>
-                {inputList.map((number: number, index: number) => makeVariable(number, index))}
-            </>
-            <div className="calculator__buttons">
-                <button
-                    className="calculator__button calculator__button_type_add"
-                    onClick={handleAddClick}
-                />
-                <button
-                    className={removeButtonClassName}
-                    onClick={handleRemoveClick}
-                />
-            </div>
+            <DynamicVariable
+                prompt="Доля категории"
+                name="proportion"
+                inputList={inputList}
+                setInputList={setInputList}
+                elementType="float"
+            />
         </Calculator>
     )
 }
